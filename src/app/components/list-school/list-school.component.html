@@ -1,0 +1,34 @@
+<div class="container wrapper">
+  <div class="row">
+      <!-- table -->
+      <div class="col-md-12">
+          <div class="inner">
+              <h3>Escuelas Profesionales</h3>
+              <a class="btn btn-primary text-white add" routerLink="add-school">
+                <i class="fas fa-user-plus"></i> Agregar
+              </a>
+              <table class="table table-bordered">
+                  <thead>
+                      <tr>
+                          <th scope="col">#</th>
+                          <th scope="col">Nombre</th>
+                          <th scope="col">Fecha registro</th>
+                          <th scope="col">Action</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr *ngFor="let item of schoolList">
+                          <th scope="row">{{item.id}}</th>
+                          <td>{{item.name}}</td>
+                          <td>{{item.created_at}}</td>
+                          <td>
+                              <button type="button" class="btn btn-success btn-sm move-right" (click)="onEdit(item)">Edit</button>
+                              <button type="button" class="btn btn-danger btn-sm" (click)="deleteSchool(item.id)">Remove</button>
+                          </td>
+                      </tr>
+                  </tbody>
+              </table>
+          </div>
+      </div>
+  </div>
+</div>
